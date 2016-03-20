@@ -1,0 +1,7 @@
+<%= @test %>
+<%= link_to "Sign up now!", signup_path %>
+<%= link_to "Login", login_path %>
+<%= link_to "Logout", logout_path, method: :delete %>
+<% if current_user %>
+  <%= link_to "Account", edit_user_path(current_user) %>
+<% end %>
