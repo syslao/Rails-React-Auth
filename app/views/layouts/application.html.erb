@@ -8,7 +8,17 @@
 </head>
 <body>
 
-<%= yield %>
-<%= link_to "Home", root_path %>
+
+  <!-- <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-success" %>
+  <% end %> -->
+
+  <% if flash[:success] %>
+    <div class="alert alert-success"><%= flash[:success] %></div>
+  <% end %>
+
+
+  <%= yield %>
+  <%= link_to "Home", root_path %>
 </body>
 </html>

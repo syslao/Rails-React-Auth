@@ -31,8 +31,12 @@
 
           <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
         <% end %>
-
-			</div>
+        <div>
+        <br>  
+        <p>Unhappy?</p>
+        <%= link_to 'Delete account', @user, class: "deleteAccount btn btn-xs btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
 		</div>
 	</div>
 </div>

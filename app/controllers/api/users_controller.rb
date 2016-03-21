@@ -20,6 +20,11 @@ module Api
 
     # GET /users/1/edit
     def edit
+      if @user
+        render json: @user, only: [:email, :name],  status: 200
+      else
+        render text: "Unidentified user", status: 422
+      end
     end
 
     # POST /users
@@ -35,19 +40,18 @@ module Api
     # PATCH/PUT /users/1
     def update
       if @user.update_attributes(user_params)
-        render text: "Accound has been updated successfuly", status: 201
+        render text: "Account has been updated successfuly", status: 200
       else
         render json: @user.errors, status: 422
       end
     end
 
     # DELETE /users/1
-    # DELETE /users/1.json
     def destroy
       if @user.destroy
-        render text: "success", status: 201
+        render text: "Account has been deleted successfuly", status: 201
       else
-        render text: "failed again", status: 422
+        render text: "Something went wrong", status: 422
       end
     end
 
