@@ -49,7 +49,7 @@ module Api
     # DELETE /users/1
     def destroy
       if @user.destroy
-        render text: "Account has been deleted successfuly", status: 201
+        render text: "Account has been deleted successfuly", status: 200
       else
         render text: "Something went wrong", status: 422
       end

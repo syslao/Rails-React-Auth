@@ -9,16 +9,14 @@
 <body>
 
 
-  <!-- <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-success" %>
-  <% end %> -->
-
-  <% if flash[:success] %>
-    <div class="alert alert-success"><%= flash[:success] %></div>
+  <% flash.each do |name, msg| %>
+    <% if name != "danger" %>
+      <%= content_tag :div, msg, class: "alert alert-success" %>
+    <% end %>
   <% end %>
 
 
   <%= yield %>
-  <%= link_to "Home", root_path %>
+
 </body>
 </html>
