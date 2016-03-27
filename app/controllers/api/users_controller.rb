@@ -40,7 +40,7 @@ module Api
     # PATCH/PUT /users/1
     def update
       if @user.update_attributes(user_params)
-        render text: "Account has been updated successfuly", status: 200
+        render text: "Account has been updated successfully", status: 200
       else
         render json: @user.errors, status: 422
       end
